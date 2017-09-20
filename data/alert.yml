@@ -1,0 +1,52 @@
+doctype:
+  type: text
+  text: '<!DOCTYPE html>'
+html:
+  type: html
+  innerHTML:
+    head:
+      type: head
+      innerHTML:
+        -
+          type: title
+          innerHTML: 'Page not found'
+        -
+          type: link
+          attribute:
+            href: /plugin/twitter/bootstrap335v/css/bootstrap.css
+            rel: stylesheet
+        -
+          type: meta
+          attribute:
+            name: robots
+            content: nofollow
+          
+    body:
+      type: div
+      attribute:
+        class: container
+        style: 'margin-top:10px'
+      innerHTML:
+        col:
+          type: div
+          attribute:
+            class: 'col-md-12'
+          innerHTML:
+            alert:
+              type: div
+              attribute:
+                class: 'alert alert-warning'
+                role: alert
+              innerHTML: 
+                strong:
+                  type: strong
+                  innerHTML: Could not find this page!
+                webmaster:
+                  settings:
+                    disabled: false
+                  type: div
+                  innerHTML:
+                    description:
+                      type: p
+                      innerHTML: 
+      
