@@ -30,10 +30,14 @@ class PluginWfPagenotfound{
       header('Location: '.$data->get('data/location_url'), true, $data->get('data/location_status_code'));
       die();
     }
-    header("HTTP/1.0 404 Not Found");
-    $element = wfFilesystem::loadYml(__DIR__.'/data/alert.yml');
-    $element = wfArray::set($element, 'html/innerHTML/body/innerHTML/col/innerHTML/alert/innerHTML/webmaster/innerHTML/description/innerHTML', wfArray::get($event, 'description'));
-    wfDocument::renderElement(($element));
+    if(!wfRequest::get('_time')){
+      header("HTTP/1.0 404 Not Found");
+      $element = wfFilesystem::loadYml(__DIR__.'/data/alert.yml');
+      $element = wfArray::set($element, 'html/innerHTML/body/innerHTML/col/innerHTML/alert/innerHTML/webmaster/innerHTML/description/innerHTML', wfArray::get($event, 'description'));
+      wfDocument::renderElement(($element));
+    }else{
+      echo wfArray::get($event, 'description');
+    }
     exit();
   }
 }
