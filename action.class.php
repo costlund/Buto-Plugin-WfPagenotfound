@@ -19,6 +19,7 @@ class PluginWfPagenotfound{
     /**
      * 
      */
+    wfPlugin::includeonce('wf/array');
     $data = new PluginWfArray($data);
     /**
      * Change location.
