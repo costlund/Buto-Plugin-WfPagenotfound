@@ -1,8 +1,17 @@
 <?php
 /**
 <p>
-Plugin to handle when client trying to access a none existing page. 
+Plugin to handle when client trying to access a none existing page.
 </p>
+ *
+events:
+  page_not_found:
+    -
+      plugin: 'wf/pagenotfound'
+      method: handler
+      data:
+        location_url: '/d/pagenotfound'
+ * 
  */
 class PluginWfPagenotfound{
   /**
